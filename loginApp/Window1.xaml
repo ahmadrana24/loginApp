@@ -8,12 +8,11 @@
         Title="Window1" Height="450" Width="800">
     <Grid>
         <Image HorizontalAlignment="Left" Height="100" Margin="682,10,0,0" VerticalAlignment="Top" Width="100"/>
-        <Image Margin="677,10,5,294" Source="pinterest.png"/>
+        <Image x:Name="profilePic" Margin="677,10,5,294" Source="pinterest.png"/>
         <Label x:Name="username" Content="AhmadRana" HorizontalAlignment="Left" Margin="603,32,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="0.5,-0.423"/>
-        <Label MouseDoubleClick="followers_MouseDoubleClick" x:Name="followers" Content="Followers : 1" HorizontalAlignment="Left" Margin="603,53,0,0" VerticalAlignment="Top" FontSize="10" RenderTransformOrigin="1.138,0.478"/>
-        <Label MouseDoubleClick="following_MouseDoubleClick" x:Name="following" Content="Following : 10" HorizontalAlignment="Left" Margin="603,76,0,0" VerticalAlignment="Top" FontSize="10" RenderTransformOrigin="1.138,0.478"/>
+        <Label MouseDoubleClick="followers_MouseDoubleClick" x:Name="followers" Content="Followers : " HorizontalAlignment="Left" Margin="604,55,0,0" VerticalAlignment="Top" FontSize="10" RenderTransformOrigin="1.138,0.478"/>
+        <Label MouseDoubleClick="following_MouseDoubleClick" x:Name="following" Content="Following : " HorizontalAlignment="Left" Margin="603,76,0,0" VerticalAlignment="Top" FontSize="10" RenderTransformOrigin="1.138,0.478"/>
         <Image Margin="10,32,513,320" Source="1200px-Pinterest_Logo.svg.png" Stretch="Fill"/>
-
         <Button Foreground="White" x:Name="seeUsers" Content="Users" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="357,53,0,0" FontStyle="Italic" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Background="Black" Click="seeUsers_Click" FontFamily="Segoe UI Semibold" />
         <Button x:Name="logout" Content="Logout" HorizontalAlignment="Left" Margin="458,53,0,0" VerticalAlignment="Top" Width="75" Click="logout_Click"/>
         <ScrollViewer HorizontalAlignment="Left" Height="279" Margin="10,125,0,0" VerticalAlignment="Top" Width="772">
@@ -51,5 +50,8 @@
                 <Image  Grid.Column="4" Grid.Row="2" Source="42899412_1932518203709218_9019617559971889152_o.jpg" Stretch="Uniform"/>
             </Grid>
         </ScrollViewer>
+        <Label x:Name="followersNum" Content="" HorizontalAlignment="Left" Margin="662,55,0,0" VerticalAlignment="Top" FontSize="10" FontWeight="Bold"/>
+        <Label x:Name="followingNum" Content="" HorizontalAlignment="Left" Margin="662,76,0,0" VerticalAlignment="Top" FontSize="10" FontWeight="Bold" />
+        <Button x:Name="addPhoto" Background="White" Content="Add a picture" HorizontalAlignment="Left" Margin="381,82,0,0" VerticalAlignment="Top" Width="125" FontSize="16" FontStyle="Italic" Click="addPhoto_Click"/>
     </Grid>
 </Window>

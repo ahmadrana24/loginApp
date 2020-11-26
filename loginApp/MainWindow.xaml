@@ -14,6 +14,8 @@
         <Label  Foreground="White" Content="Username" HorizontalAlignment="Left" Margin="144,152,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" FontStyle="Italic" Height="31"/>
         <Label Foreground="White" Content="Password" HorizontalAlignment="Left" Margin="144,202,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.433,0.231" FontSize="15" FontWeight="Bold" FontStyle="Italic" TextOptions.TextFormattingMode="Display"/>
         <PasswordBox PasswordChanged="password_PasswordChanged" x:Name="password" HorizontalAlignment="Left" Margin="19,202,0,0" VerticalAlignment="Top" Height="23" Width="120" FontSize="15"/>
+        <Label  Foreground="White" Content="Login&#xD;&#xA;" HorizontalAlignment="Left" Margin="19,38,0,0" VerticalAlignment="Top" FontSize="22" FontStyle="Italic" Height="46" Width="120" FontWeight="Bold"/>
+        <Button x:Name="signUp" Content="SignUp" HorizontalAlignment="Left" Background="White" VerticalAlignment="Top" Width="75" Margin="38,321,0,0" Click="signUp_Click"/>
 
     </Grid>
 </Window>

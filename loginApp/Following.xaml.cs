@@ -16,16 +16,25 @@ namespace loginApp
 {
     public partial class Following : Window
     {
-        public Following()
+        User user = new User();
+        public Following(User user)
         {
+            this.user = user;
             InitializeComponent();
+
+            followinglist.ItemsSource = user.following;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            Window1 win = new Window1();
+            Window1 win = new Window1(user);
             win.Show();
+        }
+
+        private void followinglist_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

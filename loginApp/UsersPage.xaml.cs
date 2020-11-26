@@ -19,9 +19,13 @@ namespace loginApp
     /// </summary>
     public partial class UsersPage : Window
     {
-        public UsersPage()
+        User user = new User();
+        public UsersPage(User user)
         {
+            this.user = user;
+           
             InitializeComponent();
+            usersList.ItemsSource = AllUsers.allUsers;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -32,8 +36,13 @@ namespace loginApp
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            Window1 wn = new Window1();
+            Window1 wn = new Window1(user);
             wn.Show();
+        }
+
+        private void usersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

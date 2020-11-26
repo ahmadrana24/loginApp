@@ -10,15 +10,14 @@
         <Button Content="&lt;- Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="85" Height="36" Click="Button_Click_1" FontSize="20" FontWeight="Bold" FontStyle="Italic" Background="Transparent" BorderThickness="0"/>
         <Image Margin="10,57,513,295" Source="1200px-Pinterest_Logo.svg.png" Stretch="Fill"/>
         <Label x:Name="UserLabel" Content="Following" HorizontalAlignment="Left" Margin="588,57,0,0" VerticalAlignment="Top" FontSize="40" Height="67" FontWeight="Bold" FontStyle="Italic"/>
-        <ListBox HorizontalAlignment="Left" Height="251" Margin="313,129,0,0" VerticalAlignment="Top" Width="204" BorderThickness="0">
-            <ListBoxItem Content="Ahmad rana"/>
-            <ListBoxItem Content="atif"/>
-            <ListBoxItem Content="faraz"/>
-            <ListBoxItem Content="sohail"/>
-            <ListBoxItem Content="ammad"/>
-            <ListBoxItem Content="taha"/>
-            <ListBoxItem Content="muzammal"/>
-            <ListBoxItem Content="faisal"/>
+        <ListBox x:Name="followinglist" HorizontalAlignment="Left" Height="251" Margin="313,129,0,0" VerticalAlignment="Top" Width="204" BorderThickness="0" SelectionChanged="followinglist_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=Username}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
         <Image Margin="47,152,547,99" Source="467-pinterest2.png" Stretch="Fill"/>
 

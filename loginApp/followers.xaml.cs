@@ -14,14 +14,14 @@ using System.Windows.Shapes;
 
 namespace loginApp
 {
-    /// <summary>
-    /// Interaction logic for followers.xaml
-    /// </summary>
     public partial class followers : Window
     {
-        public followers()
+        User user = new User();
+        public followers(User user)
         {
+            this.user = user;
             InitializeComponent();
+            followersList.ItemsSource = user.followers;
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -32,7 +32,7 @@ namespace loginApp
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            Window1 win = new Window1();
+            Window1 win = new Window1(user);
             win.Show();
         }
     }

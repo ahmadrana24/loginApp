@@ -9,8 +9,14 @@
     <Grid>
         <Image Margin="10,57,513,295" Source="1200px-Pinterest_Logo.svg.png" Stretch="Fill"/>
         <Label x:Name="UserLabel" Content="Followers" HorizontalAlignment="Left" Margin="594,57,0,0" VerticalAlignment="Top" FontSize="40" Height="67" FontWeight="Bold" FontStyle="Italic"/>
-        <ListBox HorizontalAlignment="Left" Height="251" Margin="325,129,0,0" VerticalAlignment="Top" Width="204" BorderThickness="0" SelectionChanged="ListBox_SelectionChanged">
-            <ListBoxItem Content="faisal"/>
+        <ListBox x:Name="followersList" HorizontalAlignment="Left" Height="251" Margin="325,129,0,0" VerticalAlignment="Top" Width="204" BorderThickness="0" SelectionChanged="ListBox_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=Username}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
         <Image Margin="42,211,584,39" Source="pinterest-logo-CCDD2FE1E8-seeklogo.com.png" Stretch="Fill"/>
         <Button Content="&lt;- Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="85" Height="36" Click="Button_Click_1" FontSize="20" FontWeight="Bold" FontStyle="Italic" Background="Transparent" BorderThickness="0"/>

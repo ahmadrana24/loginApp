@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -16,8 +17,35 @@ using System.Windows.Shapes;
 
 namespace loginApp
 {
-    public partial class MainWindow : Window
+  
+    public class AllUsers
     {
+        public static BindingList<User> allUsers = new BindingList<User>();
+
+    }
+    public class User
+    {
+        public String name { get; set; }
+        public String Username { get; set; }
+        public String password { get; set; }
+        public String profilePhoto { get; set; }
+
+        public BindingList<User> followers { get; set; }
+        public BindingList<User> following { get; set; }
+        public BindingList<String> images { get; set; }
+    }
+    public partial class MainWindow : Window, INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged(string propertyName)
+        {
+            //Submitted by SP18-BSE-009 AHMED ASHRAF 
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
         public MainWindow()
         {
             InitializeComponent();
@@ -26,20 +54,27 @@ namespace loginApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string usernamee = "ahmadrana";
-            string pssword = "12345";
+
             if(Username.Text != "" && password.Password != "")
             {
-                if (Username.Text == usernamee && password.Password == pssword)
-                {
-                    this.Hide();
-                    Window1 win = new Window1();
-                    win.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Failed to login Try again\nIncorrect username or password","Failed");
-                }
+                
+                    bool found = false;
+                    for(int i = 0; i< AllUsers.allUsers.Count; i++)
+                    {
+                        if(AllUsers.allUsers[i].Username == Username.Text && AllUsers.allUsers[i].password == password.Password)
+                        {
+                            this.Hide();
+                            Window1 win = new Window1(AllUsers.allUsers[i]);
+                            win.Show();
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found)
+                    {
+                        MessageBox.Show("Please register first or check your email or password");
+                    }
+                    
             }
             else
             {
@@ -56,6 +91,13 @@ namespace loginApp
         private void password_PasswordChanged(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void signUp_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            SignUpScreenxaml win = new SignUpScreenxaml();
+            win.Show();
         }
     }
 }

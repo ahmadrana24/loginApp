@@ -21,3 +21,7 @@ C:\Users\Ahmad Rana\source\repos\loginApp\loginApp\obj\Debug\followers.g.cs
 C:\Users\Ahmad Rana\source\repos\loginApp\loginApp\obj\Debug\followers.baml
 C:\Users\Ahmad Rana\source\repos\loginApp\loginApp\obj\Debug\Following.g.cs
 C:\Users\Ahmad Rana\source\repos\loginApp\loginApp\obj\Debug\Following.baml
+C:\Users\Ahmad Rana\source\repos\loginApp\loginApp\obj\Debug\SignUpScreenxaml.g.cs
+C:\Users\Ahmad Rana\source\repos\loginApp\loginApp\obj\Debug\SignUpScreenxaml.baml
+C:\Users\Ahmad Rana\source\repos\loginApp\loginApp\obj\Debug\Selectprofilephoto.g.cs
+C:\Users\Ahmad Rana\source\repos\loginApp\loginApp\obj\Debug\Selectprofilephoto.baml

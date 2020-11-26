@@ -11,15 +11,15 @@
         <Label x:Name="UserLabel" Content="Availble users" HorizontalAlignment="Left" Margin="509,51,0,0" VerticalAlignment="Top" FontSize="40" Height="67" FontWeight="Bold" FontStyle="Italic"/>
         <TextBox x:Name="searchBox" HorizontalAlignment="Left" Height="23" Margin="269,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="name"/>
         <Button x:Name="searchBtn" Content="Search" HorizontalAlignment="Left" Margin="411,123,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <ListBox HorizontalAlignment="Left" Height="251" Margin="10,158,0,0" VerticalAlignment="Top" Width="204" BorderThickness="0">
-            <ListBoxItem Content="Ahmad rana"/>
-            <ListBoxItem Content="atif"/>
-            <ListBoxItem Content="faraz"/>
-            <ListBoxItem Content="sohail"/>
-            <ListBoxItem Content="ammad"/>
-            <ListBoxItem Content="taha"/>
-            <ListBoxItem Content="muzammal"/>
-            <ListBoxItem Content="faisal"/>
+        <ListBox x:Name="usersList" HorizontalAlignment="Left" Height="251" Margin="10,158,0,0" VerticalAlignment="Top" Width="204" BorderThickness="0" SelectionChanged="usersList_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=Username}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            
         </ListBox>
         <Button Content="&lt;- Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="85" Height="36" Click="Button_Click_1" FontSize="20" FontWeight="Bold" FontStyle="Italic" Background="Transparent" BorderThickness="0"/>
 
