@@ -30,8 +30,8 @@ namespace loginApp
         public String password { get; set; }
         public String profilePhoto { get; set; }
 
-        public BindingList<User> followers { get; set; }
-        public BindingList<User> following { get; set; }
+        public BindingList<String> followers { get; set; }
+        public BindingList<String> following { get; set; }
         public BindingList<String> images { get; set; }
     }
     public partial class MainWindow : Window, INotifyPropertyChanged
@@ -40,7 +40,7 @@ namespace loginApp
 
         private void NotifyPropertyChanged(string propertyName)
         {
-            //Submitted by SP18-BSE-009 AHMED ASHRAF 
+            //Submitted by SP18-BSE-009 AHMED ASHRAF    
             if (PropertyChanged != null)
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
@@ -49,7 +49,38 @@ namespace loginApp
         public MainWindow()
         {
             InitializeComponent();
-            
+
+             Database1Entities1 db = new Database1Entities1();
+             db.AllUsersOfApps .ToList().ForEach((item) =>
+             {
+                 List<String> followersList = new List<string>();
+                 if (item.followers != null)
+                 {
+                      followersList = item.followers.Split(',').ToList<String>();
+                 }
+                 List<String> followeingList = new List<string>();
+                 if (item.followers != null)
+                 {
+                     followeingList = item.following.Split(',').ToList<String>();
+                 }
+                 List<String> imagesList = new List<string>();
+                 if (item.followers != null)
+                 {
+                     imagesList = item.Images.Split(',').ToList<String>();
+                 }
+                 Console.WriteLine(item.Username);
+                 AllUsers.allUsers.Add(
+                     new User{
+                 Username= item.Username,
+                 profilePhoto= item.ProfilePic,
+                 name = item.Name,
+                 password = item.Password,
+                 followers = new BindingList<String>(followersList),
+                 following = new BindingList<String>(followeingList),
+                 images =  new BindingList<String>(imagesList),
+                 });
+             });
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

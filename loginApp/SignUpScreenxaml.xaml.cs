@@ -48,8 +48,8 @@ namespace loginApp
                 user.Username = username.Text;
                 user.password = password.Text;
                 user.profilePhoto = "";
-                user.followers = new BindingList<User>();
-                user.following = new BindingList<User>();
+                user.followers = new BindingList<String>();
+                user.following = new BindingList<String>();
                 this.Hide();
                 Selectprofilephoto screen = new Selectprofilephoto(user);
                 screen.Show();

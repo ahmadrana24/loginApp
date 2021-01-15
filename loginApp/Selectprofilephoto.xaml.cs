@@ -68,6 +68,19 @@ namespace loginApp
         private void done_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
+            Database1Entities1 db = new Database1Entities1();
+            db.AllUsersOfApps.Add(
+                new AllUsersOfApp{
+                    ProfilePic = users.profilePhoto,
+                    Username = users.Username,
+                    Password = users.password,
+                    followers = null,
+                    following = null,
+                    Images = null,
+                    Name = users.name,
+                }
+            );
+            db.SaveChanges();
             AllUsers.allUsers.Add(users);
             Window1 screen = new Window1(users);
             screen.Show();

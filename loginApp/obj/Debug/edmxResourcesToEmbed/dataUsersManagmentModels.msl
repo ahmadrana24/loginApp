@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UsersManagmentDbModelStoreContainer" CdmEntityContainer="UsersManagmentDbEntities">
+    <EntitySetMapping Name="dataFollowers">
+      <EntityTypeMapping TypeName="UsersManagmentDbModel.dataFollower">
+        <MappingFragment StoreEntitySet="dataFollowers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="followers" ColumnName="followers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dataFollowings">
+      <EntityTypeMapping TypeName="UsersManagmentDbModel.dataFollowing">
+        <MappingFragment StoreEntitySet="dataFollowing">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="following" ColumnName="following" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dataImageUrls">
+      <EntityTypeMapping TypeName="UsersManagmentDbModel.dataImageUrl">
+        <MappingFragment StoreEntitySet="dataImageUrl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="imageUrl" ColumnName="imageUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dataUserTables">
+      <EntityTypeMapping TypeName="UsersManagmentDbModel.dataUserTable">
+        <MappingFragment StoreEntitySet="dataUserTable">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="profilePicUrl" ColumnName="profilePicUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
