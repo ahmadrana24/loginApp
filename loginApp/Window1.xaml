@@ -13,7 +13,7 @@
         <Image Margin="10,32,513,320" Source="1200px-Pinterest_Logo.svg.png" Stretch="Fill"/>
         <Button Foreground="White" x:Name="seeUsers" Content="Users" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="357,53,0,0" FontStyle="Italic" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Background="Black" Click="seeUsers_Click" FontFamily="Segoe UI Semibold" />
         <Button x:Name="logout" Content="Logout" HorizontalAlignment="Left" Margin="458,53,0,0" VerticalAlignment="Top" Width="75" Click="logout_Click"/>
-        <ScrollViewer HorizontalAlignment="Left" Height="279" Margin="10,125,0,0" VerticalAlignment="Top" Width="772">
+        <ScrollViewer HorizontalAlignment="Left" Height="294" Margin="10,125,0,0" VerticalAlignment="Top" Width="772">
             <ListView x:Name="imagesListView" Width="300" >
                 <ListView.ItemTemplate>
                     <DataTemplate>

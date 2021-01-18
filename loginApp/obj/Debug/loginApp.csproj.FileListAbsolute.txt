@@ -33,3 +33,5 @@ C:\Users\Ahmad Rana\source\repos\loginApp\loginApp\obj\Debug\loginApp_Content.g.
 C:\Users\Ahmad Rana\source\repos\loginApp\loginApp\bin\Debug\loginApp.exe.config
 C:\Users\Ahmad Rana\source\repos\loginApp\loginApp\bin\Debug\Database1.mdf
 C:\Users\Ahmad Rana\source\repos\loginApp\loginApp\bin\Debug\Database1_log.ldf
+C:\Users\Ahmad Rana\source\repos\loginApp\loginApp\obj\Debug\Window2.g.cs
+C:\Users\Ahmad Rana\source\repos\loginApp\loginApp\obj\Debug\Window2.baml

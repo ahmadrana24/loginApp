@@ -42,7 +42,16 @@ namespace loginApp
 
         private void usersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Console.WriteLine(usersList.SelectedItem.ToString());
+        }
 
+        private void usersList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            this.Hide();
+            var obj = usersList.SelectedItem as dynamic;
+            Window2 newWin = new Window2(obj, this.user);
+            newWin.Show();
+            Console.WriteLine(usersList.SelectedItem);
         }
     }
 }

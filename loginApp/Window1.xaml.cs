@@ -84,9 +84,14 @@ namespace loginApp
                 imagesListView.ItemsSource = null;
                 imagesListView.ItemsSource = this.imagesBitMap;
                 NotifyPropertyChanged("ListViewOne");
-                this.imagesBitMap.ForEach((item) => { 
-                 Console.WriteLine(item);
-                });
+                Database1Entities1 db = new Database1Entities1();
+                var r = from d in db.AllUsersOfApps where d.Name == user.name select d;
+
+                foreach(var item in r)
+                {
+                    item.Images = item.Images + fileDialog.FileName + ',';
+                }
+                db.SaveChanges();
             }
         }
     }
